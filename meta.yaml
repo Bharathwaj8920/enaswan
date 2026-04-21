@@ -1,0 +1,51 @@
+{% set name = "enaswan" %}
+{% set version = "0.1.0" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  # sha256 is filled in after you upload to PyPI:
+  # sha256: <paste_sha256_here>
+
+build:
+  number: 0
+  script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -v
+  entry_points:
+    - enaswan = enaswan.cli:main
+
+requirements:
+  host:
+    - python >=3.8
+    - pip
+    - setuptools >=68
+  run:
+    - python >=3.8
+    - requests >=2.28.0
+    - tqdm >=4.65.0
+    - pandas >=1.5.0
+    - urllib3 >=1.26.0
+
+test:
+  imports:
+    - enaswan
+  commands:
+    - enaswan --help
+
+about:
+  home: https://github.com/yourusername/enaswan
+  license: MIT
+  license_family: MIT
+  summary: "Fast parallel FASTQ downloader for the European Nucleotide Archive (ENA)"
+  description: |
+    enaswan (ENA Smart Workflow and Acquisition Network) is a command-line tool
+    for fetching metadata, downloading FASTQ files in parallel, and verifying
+    MD5 checksums for sequencing data from the European Nucleotide Archive.
+  doc_url: https://github.com/yourusername/enaswan
+  dev_url: https://github.com/yourusername/enaswan
+
+extra:
+  recipe-maintainers:
+    - yourusername

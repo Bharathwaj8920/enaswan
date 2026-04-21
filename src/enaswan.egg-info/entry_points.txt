@@ -1,0 +1,2 @@
+[console_scripts]
+enaswan = enaswan.cli:main
