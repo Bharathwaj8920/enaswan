@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 🦢 enaswan
 
 **ENA Smart Workflow and Acquisition Network**
@@ -97,7 +96,6 @@ options:
 
 MIT © Bandari Bharathwaj
 
-=======
+
 # enaswan
 ENA Smart Workflow and Acquisition Network — fast parallel FASTQ downloader for the European Nucleotide Archive
->>>>>>> 648522048018405c80ba82485ea2f8bfe2fc7110
